@@ -16,7 +16,7 @@ int main(int argc, char ** argv)
 	int valeur1;
 	int valeur2;
 	
-	string my_object1, my_object2;
+	std::string my_object1, my_object2;
 	
 	cout << Type the first object (Composant1 or Composant2)<< endl;
 	cin >> my_object1;
