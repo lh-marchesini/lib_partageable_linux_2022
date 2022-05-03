@@ -25,8 +25,10 @@ int main(int argc, char ** argv)
 	std::cout << "Type the second object" << std::endl;
 	std::cin >> my_object2;
 	
-	s1 = "/lib_partageable_linux_2022/bin/lib"+my_object1+".so";
-	s2 = "/lib_partageable_linux_2022/bin/lib"+my_object2+".so";
+	my_object1 = "/lib_partageable_linux_2022/bin/lib"+my_object1+".so";
+	my_object2 = "/lib_partageable_linux_2022/bin/lib"+my_object2+".so";
+	s1 = my_object1;
+	s2 = my_object2;
 
 	/* open the needed object */
 	handle1 = dlopen(s1, RTLD_LOCAL | RTLD_LAZY);
