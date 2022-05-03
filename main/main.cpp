@@ -17,6 +17,7 @@ int main(int argc, char ** argv)
 	int valeur2;
 	
 	std::string my_object1, my_object2;
+	char* s1, s2;
 	
 	std::cout << "Type the first object (Composant1 or Composant2)" << std::endl;
 	std::cin >> my_object1;
@@ -24,12 +25,12 @@ int main(int argc, char ** argv)
 	std::cout << "Type the second object" << std::endl;
 	std::cin >> my_object2;
 	
-	my_object1 = "/lib_partageable_linux_2022/bin/lib"+my_object1+".so";
-	my_object2 = "/lib_partageable_linux_2022/bin/lib"+my_object2+".so";
+	s1 = "/lib_partageable_linux_2022/bin/lib"+my_object1+".so";
+	s2 = "/lib_partageable_linux_2022/bin/lib"+my_object2+".so";
 
 	/* open the needed object */
-	handle1 = dlopen(my_object1, RTLD_LOCAL | RTLD_LAZY);
-	handle2 = dlopen(my_object2, RTLD_LOCAL | RTLD_LAZY);
+	handle1 = dlopen(s1, RTLD_LOCAL | RTLD_LAZY);
+	handle2 = dlopen(s2, RTLD_LOCAL | RTLD_LAZY);
 
 	/* find the address of function and data objects */
 	fptr1 = (int (*)(int))dlsym(handle1, composant1);
