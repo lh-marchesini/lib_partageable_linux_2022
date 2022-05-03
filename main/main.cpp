@@ -17,7 +17,8 @@ int main(int argc, char ** argv)
 	int valeur2;
 	
 	std::string my_object1, my_object2;
-	const char* s1, s2;
+	const char* s1;
+	const char* s2;
 	
 	std::cout << "Type the first object (Composant1 or Composant2)" << std::endl;
 	std::cin >> my_object1;
