@@ -10,8 +10,8 @@ int main(int argc, char ** argv)
 	void    *handle1 ,*handle2;
 	int     (*fptr1)(int), (*fptr2)(int);
 	
-	const char* data1=3;
-	const char* data2=5;
+	const char* data1="3";
+	const char* data2="5";
 
 	int valeur1;
 	int valeur2;
