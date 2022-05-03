@@ -18,10 +18,10 @@ int main(int argc, char ** argv)
 	
 	std::string my_object1, my_object2;
 	
-	std::cout << Type the first object (Composant1 or Composant2)<< endl;
+	std::cout << "Type the first object (Composant1 or Composant2)" << endl;
 	std::cin >> my_object1;
 	
-	std::cout << Type the second object << endl;
+	std::cout << "Type the second object" << endl;
 	std::cin >> my_object2;
 
 	/* open the needed object */
