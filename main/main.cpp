@@ -43,10 +43,10 @@ int main(int argc, char ** argv)
 	//(*fptr)(*iptr);
 
 	//valeur1=composant1("3,5");
-	valeur1=(*fptr1)("3,5");
+	valeur1=(*fptr1)("(3,5)");
 
 	//valeur2=composant2("3,5");
-	valeur2=(*fptr2)("3,5");
+	valeur2=(*fptr2)("(3,5)");
 
 	std::cout << getComposant1Version() << std::endl;
 	std::cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << std::endl;
