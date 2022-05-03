@@ -18,11 +18,11 @@ int main(int argc, char ** argv)
 	
 	std::string my_object1, my_object2;
 	
-	cout << Type the first object (Composant1 or Composant2)<< endl;
-	cin >> my_object1;
+	std::cout << Type the first object (Composant1 or Composant2)<< endl;
+	std::cin >> my_object1;
 	
-	cout << Type the second object << endl;
-	cin >> my_object2;
+	std::cout << Type the second object << endl;
+	std::cin >> my_object2;
 
 	/* open the needed object */
 	handle1 = dlopen("/lib_partageable_linux_2022/bin/lib"+my_object1+".so", RTLD_LOCAL | RTLD_LAZY);
