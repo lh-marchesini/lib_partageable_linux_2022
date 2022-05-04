@@ -26,8 +26,8 @@ int main(int argc, char ** argv)
 	std::cout << "Type the second object" << std::endl;
 	std::cin >> my_function2;
 	
-	my_object1 = "/lib_partageable_linux_2022/bin/lib"+my_function1+".so";
-	my_object2 = "/lib_partageable_linux_2022/bin/lib"+my_function2+".so";
+	my_object1 = "/lib_partageable_linux_2022/bin/libComposant1.so";
+	my_object2 = "/lib_partageable_linux_2022/bin/libComposant2.so";
 	s1 = my_object1.c_str();
 	s2 = my_object2.c_str();
 
