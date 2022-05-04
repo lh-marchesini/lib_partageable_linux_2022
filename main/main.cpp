@@ -20,11 +20,11 @@ int main(int argc, char ** argv)
 	const char* s1;
 	const char* s2;
 	
-	std::cout << "Type the first object (Composant1 or Composant2)" << std::endl;
-	std::cin >> my_function1;
+	//std::cout << "Type the first object (Composant1 or Composant2)" << std::endl;
+	//std::cin >> my_function1;
 	
-	std::cout << "Type the second object" << std::endl;
-	std::cin >> my_function2;
+	//std::cout << "Type the second object" << std::endl;
+	//std::cin >> my_function2;
 	
 	my_object1 = "/lib_partageable_linux_2022/bin/libComposant1.so";
 	my_object2 = "/lib_partageable_linux_2022/bin/libComposant2.so";
@@ -36,8 +36,8 @@ int main(int argc, char ** argv)
 	handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
 
 	/* find the address of function and data objects */
-	fptr1 = dlsym(handle1, my_function1.c_str());
-	fptr2 = (int (*)(int))dlsym(handle2, my_function2.c_str());
+	fptr1 = dlsym(handle1, "Composant1");
+	fptr2 = dlsym(handle2, "Composant2");
 
 	/* invoke function, passing value of integer as a parameter */
 	//(*fptr)(*iptr);
