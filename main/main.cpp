@@ -42,8 +42,8 @@ int main(int argc, char ** argv)
 	handle2 = dlopen(lib2.c_str(), RTLD_LAZY);
 
 	/* find the address of function and data objects */
-	fptr1 = (int (*)(int, int))dlsym(handle1, my_function1);
-	fptr2 = (int (*)(int, int))dlsym(handle2, my_function2);
+	fptr1 = (int (*)(int, int))dlsym(handle1, my_function1.c_str());
+	fptr2 = (int (*)(int, int))dlsym(handle2, my_function2.c_str());
 	
 	if (handle1==NULL || handle2==NULL || fptr1==NULL || fptr2==NULL){
 		printf("ERROR NULL");
