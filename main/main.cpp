@@ -8,7 +8,7 @@
 int main(int argc, char ** argv)
 {
 	void    *handle1 ,*handle2;
-	int     (*fptr1)(int), (*fptr2)(int);
+	int     (*fptr1)(int, int), (*fptr2)(int, int);
 	
 	int data1 = 3;
 	int data2 = 5;
@@ -36,18 +36,18 @@ int main(int argc, char ** argv)
 	handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
 
 	/* find the address of function and data objects */
-	fptr1 = (int (*)(int))dlsym(handle1, my_function1.c_str());
+	fptr1 = dlsym(handle1, my_function1.c_str());
 	fptr2 = (int (*)(int))dlsym(handle2, my_function2.c_str());
 
 	/* invoke function, passing value of integer as a parameter */
 	//(*fptr)(*iptr);
 
 	//valeur1=composant1("3,5");
-	valeur1=(*fptr1)(data1);
+	valeur1=(*fptr1)(data1, data2);
 
 	//valeur2=composant2("3,5");
-	valeur2=(*fptr2)(data1);
+	valeur2=(*fptr2)(data1, data2);
 
 	std::cout << getComposant1Version() << std::endl;
-	std::cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << std::endl;
+	std::cout << "valeur 1 :" << fptr1(data1, data2) << " valeur 2 :" << fptr2(data1, data2) << std::endl;
 }
