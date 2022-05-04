@@ -32,8 +32,8 @@ int main(int argc, char ** argv)
 	s2 = my_object2.c_str();
 
 	/* open the needed object */
-	handle1 = dlopen(s1, RTLD_LOCAL | RTLD_LAZY);
-	handle2 = dlopen(s2, RTLD_LOCAL | RTLD_LAZY);
+	handle1 = dlopen(s1, RTLD_LAZY);
+	handle2 = dlopen(s2, RTLD_LAZY);
 
 	/* find the address of function and data objects */
 	fptr1 = (int (*)(int))dlsym(handle1, my_function1.c_str());
