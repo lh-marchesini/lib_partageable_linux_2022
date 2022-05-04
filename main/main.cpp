@@ -18,28 +18,32 @@ int main(int argc, char ** argv)
 	int valeur1;
 	int valeur2;
 	
-	std::string my_object1, my_object2, my_function1, my_function2;
+	std::string my_function1, my_function2, lib1, lib2;
 	const char* s1;
 	const char* s2;
 	
-	//std::cout << "Type the first object (Composant1 or Composant2)" << std::endl;
-	//std::cin >> my_function1;
+	std::cout << "Type the first function (composant1 or composant2)" << std::endl;
+	std::cin >> my_function1;
 	
-	//std::cout << "Type the second object" << std::endl;
-	//std::cin >> my_function2;
+	std::cout << "Type the second object" << std::endl;
+	std::cin >> my_function2;
 	
-	my_object1 = "/lib_partageable_linux_2022/bin/libComposant1.so";
-	my_object2 = "/lib_partageable_linux_2022/bin/libComposant2.so";
-	s1 = my_object1.c_str();
-	s2 = my_object2.c_str();
+	if (my_function1=="composant1"){
+		lib1 = "libComposant1.so";
+		lib2 = "libComposant2.so";
+	}
+	else{
+		lib1 = "libComposant2.so";
+		lib2 = "libComposant1.so";
+	}
 
 	/* open the needed object */
-	//handle1 = dlopen("/lib_partageable_linux_2022/bin/libComposant1.so", RTLD_LAZY);
-	//handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
+	handle1 = dlopen(lib1.c_str(), RTLD_LAZY);
+	handle2 = dlopen(lib2.c_str(), RTLD_LAZY);
 
 	/* find the address of function and data objects */
-	fptr1 = (int (*)(int, int))dlsym(handle1, "composant1");
-	fptr2 = (int (*)(int, int))dlsym(handle2, "composant2");
+	fptr1 = (int (*)(int, int))dlsym(handle1, my_function1);
+	fptr2 = (int (*)(int, int))dlsym(handle2, my_function2);
 	
 	if (handle1==NULL || handle2==NULL || fptr1==NULL || fptr2==NULL){
 		printf("ERROR NULL");
