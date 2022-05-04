@@ -7,8 +7,8 @@
 
 int main(int argc, char ** argv)
 {
-	void    *handle1 ,*handle2;
-	int     (*fptr1)(int, int), (*fptr2)(int, int);
+	void *handle1 ,*handle2;
+	int (*fptr1)(int, int), (*fptr2)(int, int);
 	
 	int data1 = 3;
 	int data2 = 5;
@@ -32,8 +32,8 @@ int main(int argc, char ** argv)
 	s2 = my_object2.c_str();
 
 	/* open the needed object */
-	handle1 = dlopen("/lib_partageable_linux_2022/bin/libComposant1.so", RTLD_LAZY);
-	handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
+	*handle1 = dlopen("/lib_partageable_linux_2022/bin/libComposant1.so", RTLD_LAZY);
+	*handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
 
 	/* find the address of function and data objects */
 	fptr1 = dlsym(handle1, "Composant1");
