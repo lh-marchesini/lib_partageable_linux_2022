@@ -10,8 +10,8 @@ int main(int argc, char ** argv)
 	void    *handle1 ,*handle2;
 	int     (*fptr1)(int), (*fptr2)(int);
 	
-	int data1 = atoi(3);
-	int data2 = atoi(5);
+	int data1 = 3;
+	int data2 = 5;
 
 	int valeur1;
 	int valeur2;
