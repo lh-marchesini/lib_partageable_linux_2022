@@ -8,7 +8,7 @@
 int main(int argc, char ** argv)
 {
 	void    *handle1 ,*handle2;
-	int     (*fptr1)(int, int), (*fptr2)(int, int);
+	int     (*fptr1)(int), (*fptr2)(int);
 	
 	const char* data1="3";
 	const char* data2="5";
@@ -43,10 +43,10 @@ int main(int argc, char ** argv)
 	//(*fptr)(*iptr);
 
 	//valeur1=composant1("3,5");
-	valeur1=(*fptr1)("data1,data2");
+	valeur1=(*fptr1)("data1");
 
 	//valeur2=composant2("3,5");
-	valeur2=(*fptr2)("data1,data2");
+	valeur2=(*fptr2)("data1");
 
 	std::cout << getComposant1Version() << std::endl;
 	std::cout << "valeur 1 :" << valeur1 << " valeur 2 :" << valeur2 << std::endl;
