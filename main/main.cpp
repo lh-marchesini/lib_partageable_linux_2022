@@ -9,7 +9,8 @@ int main(int argc, char ** argv)
 {
 	void *handle1 = dlopen("/lib_partageable_linux_2022/bin/libComposant1.so", RTLD_LAZY);
 	void *handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
-	int (*fptr1)(int, int), (*fptr2)(int, int);
+	int (*fptr1)(int, int);
+	int (*fptr2)(int, int);
 	
 	int data1 = 3;
 	int data2 = 5;
@@ -37,8 +38,8 @@ int main(int argc, char ** argv)
 	//handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
 
 	/* find the address of function and data objects */
-	fptr1 = dlsym(handle1, "composant1");
-	fptr2 = dlsym(handle2, "composant2");
+	fptr1 = (int (*)(int, int))dlsym(handle1, "composant1");
+	fptr2 = (int (*)(int, int))dlsym(handle2, "composant2");
 
 	/* invoke function, passing value of integer as a parameter */
 	//(*fptr)(*iptr);
