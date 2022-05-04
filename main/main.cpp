@@ -38,8 +38,8 @@ int main(int argc, char ** argv)
 	//handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
 
 	/* find the address of function and data objects */
-	fptr1 = dlsym(handle1, "composant1");
-	fptr2 = (int (*)(int, int))dlsym(handle2, "composant2");
+	fptr1 = (int (*)(int, int))dlsym(handle1, "composant1");
+	fptr2 = dlsym(handle2, "composant2");
 	
 	if (handle1==NULL || handle2==NULL || fptr1==NULL || fptr2==NULL){
 		printf("ERROR NULL");
