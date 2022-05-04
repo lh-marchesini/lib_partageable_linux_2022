@@ -40,6 +40,11 @@ int main(int argc, char ** argv)
 	/* find the address of function and data objects */
 	fptr1 = (int (*)(int, int))dlsym(handle1, "composant1");
 	fptr2 = (int (*)(int, int))dlsym(handle2, "composant2");
+	
+	if (handle1==NULL || handle2==NUL || fptr1==NULL || fptr2==NULL){
+		printf("ERROR NULL");
+		exit(1);
+	}
 
 	/* invoke function, passing value of integer as a parameter */
 	//(*fptr)(*iptr);
