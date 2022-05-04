@@ -8,7 +8,7 @@
 int main(int argc, char ** argv)
 {
 	void    *handle1 ,*handle2;
-	int     (*fptr1)(int), (*fptr2)(int);
+	int     (*fptr1)(int, int), (*fptr2)(int, int);
 	
 	const char* data1="3";
 	const char* data2="5";
