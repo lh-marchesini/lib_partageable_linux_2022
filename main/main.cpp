@@ -7,8 +7,8 @@
 
 int main(int argc, char ** argv)
 {
-	void *handle1 = dlopen("/lib_partageable_linux_2022/bin/libComposant1.so", RTLD_LAZY);
-	void *handle2 = dlopen("/lib_partageable_linux_2022/bin/libComposant2.so", RTLD_LAZY);
+	void *handle1 = dlopen("libComposant1.so", RTLD_LAZY);
+	void *handle2 = dlopen("libComposant2.so", RTLD_LAZY);
 	int (*fptr1)(int, int);
 	int (*fptr2)(int, int);
 	
